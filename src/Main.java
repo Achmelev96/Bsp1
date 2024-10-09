@@ -6,12 +6,16 @@ public class Bsp01 {
 
         // Teil 1
         int number = SavitchIn.readInt();
-        System.out.println("? Integer (> 0): " + number);
-        double result = Math.ceil(Math.log10(number));
-        System.out.println("Anzahl der Stellen: " + result);
+        int number1 = number;
+        System.out.println("? Integer (> 0): ");
+        int n = 0;
+        while (number != 0) {
+            number = number / 10;
+            n++;
+        }
+        System.out.println("Anzahl der Stellen: " + n);
 
         //Teil 2
-        System.out.println("Hunderterstelle: " + (number / 100));
+        System.out.println("Hunderterstelle: " + (number1/100) % 10);
     }
-
 }
